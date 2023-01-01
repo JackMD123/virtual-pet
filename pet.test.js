@@ -1,6 +1,15 @@
 const Pet = require("./pet");
 
 describe("constructor", () => {
+  it("increments the fitness by 4 when 6 or less", () => {
+    const pet = new Pet("Fido");
+
+    pet.growUp();
+    pet.walk();
+
+    expect(pet.fitness).toEqual(10);
+  });
+
   it("decrements the fitness by 3", () => {
     const pet = new Pet("Fido");
 
