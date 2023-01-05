@@ -1,6 +1,22 @@
 const Pet = require("./pet");
 
 describe("constructor", () => {
+  it("Gives fido a checkup", () => {
+    const pet = new Pet("Fido");
+
+    pet.checkUp();
+
+    expect(pet.checkUp()).toEqual("I feel great!");
+  });
+
+  it("decrements the hunger level by 3", () => {
+    const pet = new Pet("Fido");
+
+    pet.feed();
+
+    expect(pet.hunger).toEqual(0);
+  });
+
   it("increments the fitness by 4 when 6 or less", () => {
     const pet = new Pet("Fido");
 
