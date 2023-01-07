@@ -1,6 +1,44 @@
 const Pet = require("./pet");
 
 describe("constructor", () => {
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("Fido");
+
+    pet.age = 31;
+
+    expect(() => pet.checkUp()).toThrow("Your pet is no longer alive :(");
+  });
+
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("Fido");
+
+    pet.age = 31;
+
+    expect(() => pet.walk()).toThrow("Your pet is no longer alive :(");
+  });
+
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("Fido");
+
+    pet.age = 31;
+
+    expect(() => pet.growUp()).toThrow("Your pet is no longer alive :(");
+  });
+
+  it("throws an error if the pet is not alive", () => {
+    const pet = new Pet("Fido");
+
+    pet.age = 30;
+
+    expect(() => pet.feed()).toThrow("Your pet is no longer alive :(");
+  });
+
+  it("Checks to see if pet is alive", () => {
+    const pet = new Pet("Fido");
+
+    expect(pet.isAlive).toEqual(true);
+  });
+
   it("Gives fido a checkup", () => {
     const pet = new Pet("Fido");
 
