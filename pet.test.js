@@ -1,6 +1,14 @@
 const Pet = require("./pet");
 
 describe("constructor", () => {
+  it("adoptChild method adds child into children array", () => {
+    const parent = new Pet("Dave");
+    const child = new Pet("Amelia");
+
+    parent.adoptChild(child);
+    expect(parent.children[0]).toEqual(child);
+  });
+
   it("throws an error if the pet is not alive", () => {
     const pet = new Pet("Fido");
 
